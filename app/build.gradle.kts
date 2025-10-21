@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.navigation.compose.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,5 +67,10 @@ dependencies {
     implementation("com.squareup:javapoet:1.13.0")  // Hilt
     implementation("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-compiler:2.51.1")
+
+    val lottieVersion = "6.0.0"
+    implementation("com.airbnb.android:lottie-compose:$lottieVersion")
+    // Navigation
+    implementation("androidx.navigation:navigation-compose:2.7.7")
 
 }

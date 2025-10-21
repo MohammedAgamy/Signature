@@ -36,6 +36,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -43,6 +44,7 @@ import com.agamy.signature.R
 
 @Composable
 fun DrawScreen(viewModel: DrawViewModel = hiltViewModel()) {
+    val context = LocalContext.current
 
     val paths by viewModel.paths.collectAsState()
     val brushColor by viewModel.brushColor.collectAsState()
@@ -87,7 +89,7 @@ fun DrawScreen(viewModel: DrawViewModel = hiltViewModel()) {
             }
 
             IconButton(onClick = {
-                //viewModel.saveDrawing()
+                viewModel.saveDrawingToGallery(context, paths)
             }) {
                 Image(
                     imageVector = Icons.Default.Check,

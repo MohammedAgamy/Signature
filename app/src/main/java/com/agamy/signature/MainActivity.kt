@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.agamy.signature.presentation.draw.DrawScreen
+import com.agamy.signature.presentation.navgation.MyApp
 import com.agamy.signature.ui.theme.SignatureTheme
 import dagger.hilt.EntryPoint
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            DrawScreen()
+            MyApp()
 
         }
     }
