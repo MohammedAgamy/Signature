@@ -32,7 +32,12 @@ class DrawViewModel @Inject constructor(
     private val _brushSize = MutableStateFlow(6f)
     val brushSize: StateFlow<Float> = _brushSize
 
-    fun addPath(points: Path, color: Color, width: Float) {
+
+    // 🌓 وضع الليل
+    private val _isDarkMode = MutableStateFlow(false)
+    val isDarkMode: StateFlow<Boolean> = _isDarkMode
+
+    fun addPath(points: List<Offset>, color: Color, width: Float) {
         val newPath = DrawModelPath(points, color, width)
         viewModelScope.launch {
             useCase(newPath)
@@ -54,5 +59,9 @@ class DrawViewModel @Inject constructor(
 
     fun changeBrushSize(size: Float) {
         _brushSize.value = size
+    }
+
+    fun toggleTheme() {
+        _isDarkMode.value = !_isDarkMode.value
     }
 }

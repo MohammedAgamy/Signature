@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.Path
 
 data class DrawModelPath (
     // using offset to store x and y coordinates
-    val points: Path,
+    val points: List<Offset> = emptyList(),
     // default color is black for drawing
     val color: Color = Color.Companion.Black,
     // default stroke width for drawing
